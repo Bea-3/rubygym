@@ -1,0 +1,57 @@
+Tested on Postman. 
+
+1. To Create New user 
+url: http://127.0.0.1:5070//api/adduser
+method: POST 
+
+use the json format below:
+{
+    "first_name": "..",
+    "last_name": "..",  
+    "email": "..",
+    "password": "..",
+    "address": "..",
+    "phone": "..",
+    "program": "..",
+    "subscription": "..",
+    "emergency_contact_first_name": "..",
+    "emergency_contact_last_name": "..",
+    "emergency_contact_address": "..",
+    "emergency_contact_phone": ".." 
+}
+Note:
+Program will only accept any of these options; 'self' | 'group' | 'personal training'
+subscription will only accept ; 'monthly' | '3 months' | '6 months' | 'annually'
+
+Response: New User has been created
+
+2. To Get Users 
+i. All users - 
+url: http://127.0.0.1:5070//api/users
+method: GET
+
+ii. One User -
+url: http://127.0.0.1:5070//api/user/<user_id>
+method: GET
+
+
+
+3. To Update User information
+url: http://127.0.0.1:5070/api/update/<user_id>
+method: PUT
+
+use the json format below:
+{
+    "address": "..",
+    "program": "..",
+    "subscription": "..",
+    "emergency_contact_first_name": "..",
+    "emergency_contact_last_name": "..",
+    "emergency_contact_address": "..",
+    "emergency_contact_phone": ".."  
+}
+
+
+4.  To Delete User
+url: http://127.0.0.1:5070//api/delete/<user_id>
+method: DELETE
