@@ -1,4 +1,10 @@
+General Note
 Tested on Postman. 
+Download SQLdump (rubygymDB)and import to local Database
+Dynamic parameters exist for fetching a single user using their first name, last name or user id.
+Update and Delete should be done strictly with user_id
+Database ERD.png available
+
 
 1. To Create New user 
 url: http://127.0.0.1:5070//api/adduser
@@ -31,7 +37,7 @@ url: http://127.0.0.1:5070//api/users
 method: GET
 
 ii. One User -
-url: http://127.0.0.1:5070//api/user/<user_id>
+url: http://127.0.0.1:5070//api/user/<user_info>
 method: GET
 
 

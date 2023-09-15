@@ -1,6 +1,7 @@
 import json
 from flask import Flask,request,session,jsonify
 from datetime import datetime
+from sqlalchemy.sql import text
 from sqlalchemy import or_
 from werkzeug.security import generate_password_hash,check_password_hash
 
@@ -76,10 +77,12 @@ def get_all_users():
 
 
 #retrieve db info and display as json
-@app.route('/api/user/<user_id>', methods=['GET'])
-def fetchuser(user_id):
-    # data = Client.query.join(Emergency_contact).add_columns(Emergency_contact).filter(or_(Client.client_id==info,Client.client_fname==info,Client.client_lname==info)).all()
-    data = Client.query.join(Emergency_contact).add_columns(Emergency_contact).filter(Client.client_id==user_id).all()
+@app.route('/api/user/<userinfo>', methods=['GET'])
+def fetchuser(userinfo):
+    #can query firstname lastname or id
+
+    data = Client.query.join(Emergency_contact).add_columns(Emergency_contact).filter(or_(Client.client_id==userinfo,Client.client_fname==userinfo,Client.client_lname==userinfo)).all()
+    #data = Client.query.join(Emergency_contact).add_columns(Emergency_contact).filter(Client.client_id==user_id).all()
 
     if not data:
         return jsonify({'message' : 'No user found!'})
