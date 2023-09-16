@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 15, 2023 at 08:44 PM
+-- Generation Time: Sep 16, 2023 at 01:12 PM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.1.12
 
@@ -47,7 +47,8 @@ CREATE TABLE `client` (
 INSERT INTO `client` (`client_id`, `client_fname`, `client_lname`, `client_phone`, `client_address`, `client_email`, `client_pwd`, `client_subscription`, `program`, `client_regdate`) VALUES
 (6, 'Lizzy', 'Asa', '08123456789', '16 Gimpo lagos', 'lizzy@asa.com', 'pbkdf2:sha256:260000$urxtGClublQcH0sq$06875720727b729c95ce82322e890cb6b9e95574202bcca9c09a60d773eacd', '3 months', 'self', '2023-09-15 18:40:22'),
 (7, 'Princess', 'Nwosu', '08123451189', '72 church busstop osun', 'princess@yahoo.com', 'pbkdf2:sha256:260000$SocrlHvm5IFCeKbD$acd5715d284fd9e431aba3cb370f4c2f8e82cd405c5d13cf84d8396f198c4d', 'annually', 'private training', '2023-09-15 18:42:20'),
-(8, 'John', 'Oko', '08123456789', '15 johnson street lagos', 'john@oko.com', 'pbkdf2:sha256:260000$MW36KFnc2O31kUvR$8197a385b299640bc1e9742932fbb1280af8f5ac536d202a5d627f46759d9e', '6 months', 'group', '2023-09-15 18:42:39');
+(8, 'John', 'Oko', '08123456789', '15 johnson street lagos', 'john@oko.com', 'pbkdf2:sha256:260000$MW36KFnc2O31kUvR$8197a385b299640bc1e9742932fbb1280af8f5ac536d202a5d627f46759d9e', '6 months', 'group', '2023-09-15 18:42:39'),
+(9, 'Mark', 'Essien', '08123409789', '7 pelican street lagos', 'markessien@yahoo.com', 'pbkdf2:sha256:600000$W5KsFWGvy4P44QAH$9486cfcc26730e584c49649822524d23b548b9627738d669848e747a81801c', 'monthly', '', '2023-09-15 21:43:08');
 
 -- --------------------------------------------------------
 
@@ -71,7 +72,8 @@ CREATE TABLE `emergency_contact` (
 INSERT INTO `emergency_contact` (`emcontact_id`, `em_fname`, `em_lname`, `em_phonenum`, `em_address`, `clientID`) VALUES
 (6, 'Jude', 'Miracle', '08234567890', '50 orange town ikeja', 6),
 (7, 'Blessing', 'Nwosu', '0812345678', '72 church busstop osun', 7),
-(8, 'Dexter', 'George', '08234567890', '50 blue street ikeja', 8);
+(8, 'Dexter', 'George', '08234567890', '50 blue street ikeja', 8),
+(9, 'Bello', 'Jim', '08224567890', '7 pelican street lagos', 9);
 
 --
 -- Indexes for dumped tables
@@ -100,13 +102,13 @@ ALTER TABLE `emergency_contact`
 -- AUTO_INCREMENT for table `client`
 --
 ALTER TABLE `client`
-  MODIFY `client_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `client_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `emergency_contact`
 --
 ALTER TABLE `emergency_contact`
-  MODIFY `emcontact_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `emcontact_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- Constraints for dumped tables
